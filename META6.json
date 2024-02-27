@@ -1,0 +1,25 @@
+{
+  "auth": "zef:massa",
+  "authors": [
+    "Humberto Massa"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "interface to posix mmap() and mmunmap()  calls",
+  "license": "Artistic-2.0",
+  "name": "Mmap::Native",
+  "perl": "6.d",
+  "provides": {
+    "Mmap::Native": "lib/Mmap/Native.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}

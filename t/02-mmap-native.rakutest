@@ -1,0 +1,16 @@
+use Testo;
+use Mmap::Native;
+use NativeCall;
+use NativeHelpers::Blob;
+
+plan 1;
+
+my $f = $*CWD.add('META6.json'); $f = $f.open;
+my $d = mmap Pointer, 50, PROT_READ, MAP_SHARED, $f.native-descriptor, 0;
+my $e = blob-from-pointer $d, :50elems, :type(Buf[uint8]);
+
+is $e.decode('utf8'), /'"auth": "zef:massa"'/;
+done-testing;
+
+exit;
+
