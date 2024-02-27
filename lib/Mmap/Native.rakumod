@@ -36,6 +36,76 @@ is just a low level library.
 
 =head1 CONSTANTS
 
+Remember to always use C<+|> to combine flag values!
+
+### `$flags`
+
+=begin table
+Flag | Description
+==================
+MAP_SHARED |  Share changes
+MAP_PRIVATE |  Changes are private
+MAP_SHARED_VALIDATE |  share and validate extension flags
+MAP_TYPE |  Mask for type of mapping
+MAP_FIXED |  Interpret addr exactly
+MAP_ANONYMOUS |  don't use a file
+MAP_GROWSDOWN |  stack-like segment
+MAP_DENYWRITE |  ETXTBSY
+MAP_EXECUTABLE |  mark it as an executable
+MAP_LOCKED |  pages are locked
+MAP_NORESERVE |  don't check for reservations
+MAP_POPULATE |  populate (prefault) pagetables
+MAP_NONBLOCK |  do not block on IO
+MAP_STACK |  give out an address that is best suited for process/thread stacks
+MAP_HUGETLB |  create a huge page mapping
+MAP_SYNC |  perform synchronous page faults for the mapping
+MAP_FIXED_NOREPLACE |  MAP_FIXED which doesn't unmap underlying mapping
+MAP_UNINITIALIZED |  For anonymous mmap, memory could be * uninitialized
+MLOCK_ONFAULT |  Lock pages in range after they are faulted in, do not prefault
+MS_ASYNC |  sync memory asynchronously
+MS_INVALIDATE |  invalidate the caches
+MS_SYNC |  synchronous memory sync
+MADV_NORMAL |  no further special treatment
+MADV_RANDOM |  expect random page references
+MADV_SEQUENTIAL |  expect sequential page references
+MADV_WILLNEED |  will need these pages
+MADV_DONTNEED |  don't need these pages
+MADV_FREE |  free pages only if memory pressure
+MADV_REMOVE |  remove these pages & resources
+MADV_DONTFORK |  don't inherit across fork
+MADV_DOFORK |  do inherit across fork
+MADV_HWPOISON |  poison a page for testing
+MADV_SOFT_OFFLINE |  soft offline page for testing
+MADV_MERGEABLE |  KSM may merge identical pages
+MADV_UNMERGEABLE |  KSM may not merge identical pages
+MADV_HUGEPAGE |  Worth backing with hugepages
+MADV_NOHUGEPAGE |  Not worth backing with hugepages
+MADV_DONTDUMP |  Explicity exclude from the core dump, overrides the coredump filter bits
+MADV_DODUMP |  Clear the MADV_DONTDUMP flag
+MADV_WIPEONFORK |  Zero memory on fork, child only
+MADV_KEEPONFORK |  Undo MADV_WIPEONFORK
+MADV_COLD |  deactivate these pages
+MADV_PAGEOUT |  reclaim these pages
+MADV_POPULATE_READ |  populate (prefault) page tables readable
+MADV_POPULATE_WRITE |  populate (prefault) page tables writable
+MADV_DONTNEED_LOCKED |  like DONTNEED, but drop locked pages too
+MADV_COLLAPSE |  Synchronous hugepage collapse
+=end table
+
+### `$prot` flags
+
+=begin table
+Flag | Description
+==================
+PROT_READ |  page can be read
+PROT_WRITE |  page can be written
+PROT_EXEC |  page can be executed
+PROT_SEM |  page may be used for atomic ops
+PROT_NONE |  page can not be accessed
+PROT_GROWSDOWN |  mprotect flag: extend change to start of growsdown vma
+PROT_GROWSUP |  mprotect flag: extend change to end of growsup vma
+=end table
+
 =end pod
 
 use NativeCall;
@@ -123,6 +193,7 @@ constant MADV_DONTNEED_LOCKED is export = 24; #= like DONTNEED, but drop locked 
 constant MADV_COLLAPSE is export = 25; #= Synchronous hugepage collapse
 
 constant MAP_FILE is export = 0;
+constant MAP_FAILED is export = Pointer[void].new: -1;
 
 constant PKEY_DISABLE_ACCESS is export = 0x1;
 constant PKEY_DISABLE_WRITE is export = 0x2;
