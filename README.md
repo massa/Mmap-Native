@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/massa/Mmap-Native/actions/workflows/test.yml/badge.svg)](https://github.com/massa/Mmap-Native/actions)
+
 NAME
 ====
 
