@@ -1,6 +1,8 @@
 Revision history for Mmap-Native
 
 {{$NEXT}}
+
+0.0.2  2024-02-27T19:48:49-03:00
     - Error in README.md generation, documenting it better
 
 0.0.1  2024-02-27T10:18:27-03:00
