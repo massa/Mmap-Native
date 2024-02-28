@@ -38,7 +38,25 @@ is just a low level library.
 
 Remember to always use C<+|> to combine flag values!
 
-### `$flags`
+### The `$prot` argument flags
+
+Describes the desired memory protection of the mapping (and must not conflict with the open mode of the file). It is either PROT_NONE or the bitwise OR of one or more of the following flags:
+
+=begin table
+Flag | Description
+==================
+PROT_READ |  page can be read
+PROT_WRITE |  page can be written
+PROT_EXEC |  page can be executed
+PROT_SEM |  page may be used for atomic ops
+PROT_NONE |  page can not be accessed
+PROT_GROWSDOWN |  mprotect flag: extend change to start of growsdown vma
+PROT_GROWSUP |  mprotect flag: extend change to end of growsup vma
+=end table
+
+### The `$flags` argument
+
+Determines whether updates to the mapping are visible to other processes mapping the same region, and whether updates are carried through to the underlying file.  This behavior is determined by including exactly one of the following values:
 
 =begin table
 Flag | Description
@@ -90,20 +108,6 @@ MADV_POPULATE_READ |  populate (prefault) page tables readable
 MADV_POPULATE_WRITE |  populate (prefault) page tables writable
 MADV_DONTNEED_LOCKED |  like DONTNEED, but drop locked pages too
 MADV_COLLAPSE |  Synchronous hugepage collapse
-=end table
-
-### `$prot` flags
-
-=begin table
-Flag | Description
-==================
-PROT_READ |  page can be read
-PROT_WRITE |  page can be written
-PROT_EXEC |  page can be executed
-PROT_SEM |  page may be used for atomic ops
-PROT_NONE |  page can not be accessed
-PROT_GROWSDOWN |  mprotect flag: extend change to start of growsdown vma
-PROT_GROWSUP |  mprotect flag: extend change to end of growsup vma
 =end table
 
 =end pod
@@ -198,8 +202,6 @@ constant MAP_FAILED is export = Pointer[void].new: -1;
 constant PKEY_DISABLE_ACCESS is export = 0x1;
 constant PKEY_DISABLE_WRITE is export = 0x2;
 constant PKEY_ACCESS_MASK is export = (PKEY_DISABLE_ACCESS |+ PKEY_DISABLE_WRITE);
-
-our $errno is export := cglobal('libc.so.6', 'errno', int32);
 
 =begin pod
 

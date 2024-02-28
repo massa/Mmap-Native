@@ -4,8 +4,6 @@
     "Humberto Massa"
   ],
   "build-depends": [
-    "Testo",
-    "Test::META"
   ],
   "depends": [
   ],
@@ -22,6 +20,8 @@
   "tags": [
   ],
   "test-depends": [
+    "Testo",
+    "Test::META"
   ],
   "version": "0.0.4"
 }

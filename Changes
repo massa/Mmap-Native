@@ -1,6 +1,7 @@
 Revision history for Mmap-Native
 
 {{$NEXT}}
+    - It was test-depends, not build-depends
 
 0.0.4  2024-02-27T20:49:09-03:00
     - More/better documentation
