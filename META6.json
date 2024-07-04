@@ -6,7 +6,7 @@
   "build-depends": [
   ],
   "depends": [
-    "NativeHelpeers::Blob"
+    "NativeHelpers::Blob"
   ],
   "description": "interface to posix mmap() and mmunmap()  calls",
   "license": "Artistic-2.0",
