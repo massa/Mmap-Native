@@ -37,7 +37,7 @@ sub process($proc) {
 
 sub install-test-depends() {
     my $zef  := $*DISTRO.is-win ?? 'zef.bat' !! 'zef';
-    my $proc := run $zef, "install", ".", "--test-depends", "--deps-only", :out,:err,:merge;
+    my $proc := run $zef, "install", ".", "--test-depends", "--deps-only", "--build", "--/test", "--force-install", :out,:err,:merge;
     process($proc);
 }
 
