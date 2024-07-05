@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/massa/Mmap-Native/actions/workflows/linux.yml/badge.svg)](https://github.com/massa/Mmap-Native/actions) [![Actions Status](https://github.com/massa/Mmap-Native/actions/workflows/macos.yml/badge.svg)](https://github.com/massa/Mmap-Native/actions) [![Actions Status](https://github.com/massa/Mmap-Native/actions/workflows/windows.yml/badge.svg)](https://github.com/massa/Mmap-Native/actions)
+[![Actions Status](https://github.com/massa/Mmap-Native/actions/workflows/linux.yml/badge.svg)](https://github.com/massa/Mmap-Native/actions) [![Actions Status](https://github.com/massa/Mmap-Native/actions/workflows/macos.yml/badge.svg)](https://github.com/massa/Mmap-Native/actions)
 
 NAME
 ====

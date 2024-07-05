@@ -2,6 +2,9 @@ Revision history for Mmap-Native
 
 {{$NEXT}}
 
+0.0.6  2024-07-05T08:15:40-03:00
+    - Corrections for Github CI
+
 0.0.5  2024-02-28T06:03:19-03:00
     - It was test-depends, not build-depends
 
